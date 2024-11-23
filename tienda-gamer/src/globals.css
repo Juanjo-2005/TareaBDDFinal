@@ -1,0 +1,31 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply  min-h-screen overflow-x-hidden font-sans;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply text-white no-underline text-2xl font-bold uppercase tracking-wider w-48 hover:text-secundario transition-colors;
+  }
+  
+  .nav-link {
+    @apply relative text-white no-underline text-base uppercase tracking-wider 
+           hover:text-gray-200 transition-colors;
+  }
+
+  .nav-link::before {
+    content: '';
+    @apply absolute bottom-[-2px] w-full h-[2px] bg-white transform scale-x-0 
+           transition-transform duration-500 origin-right;
+  }
+
+  .nav-link:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+}
